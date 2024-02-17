@@ -1,4 +1,4 @@
-namespace VueJs
+namespace VueApp.Server
 {
     public class WeatherForecast
     {

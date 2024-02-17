@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace VueJs.Controllers
+namespace VueApp.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
