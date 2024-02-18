@@ -1,7 +1,12 @@
+<script setup lang="ts">
+import ToDoList from './ToDoList.vue';
+</script>
+
 <template>
-    <div class="weather-component">
-        <h1>Weather forecast</h1>
-        <p>This component demonstrates fetching data from the server.</p>
+    <div class="content-component">
+        <h1>Todo</h1>
+        <ToDoList/>
+        <!-- <p>This component demonstrates fetching data from the server.</p>
 
         <div v-if="loading" class="loading">
             Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationvue">https://aka.ms/jspsintegrationvue</a> for more details.
@@ -26,7 +31,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div> -->
     </div>
 </template>
 
@@ -95,7 +100,7 @@ th, td {
     padding-right: .5rem;
 }
 
-.weather-component {
+.content-component {
     text-align: center;
 }
 

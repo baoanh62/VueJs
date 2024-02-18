@@ -7,11 +7,14 @@
       <h3>
         <slot name="heading"></slot>
       </h3>
-      <slot></slot>
+    </div>
+    <div class="notify">
+      <slot name="count"></slot>
     </div>
   </div>
 </template>
 
+  
 <style scoped>
 .item {
   margin-top: 2rem;

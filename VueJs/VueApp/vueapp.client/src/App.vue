@@ -1,25 +1,24 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import Home from './components/Home.vue';
+import NavBar from './components/NavBar.vue';
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
+    <NavBar/>
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+     
     </div>
   </header>
 
   <main>
-    <TheWelcome />
+    <Home />
   </main>
 </template>
 
 <style scoped>
 header {
-  line-height: 1.5;
+  display: flex;
 }
 
 .logo {
@@ -29,9 +28,7 @@ header {
 
 @media (min-width: 1024px) {
   header {
-    display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
   }
 
   .logo {
@@ -39,7 +36,6 @@ header {
   }
 
   header .wrapper {
-    display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
   }
