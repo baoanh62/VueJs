@@ -49,7 +49,7 @@ interface NavItem {
     text: string,
     notify: null | string,
     active: boolean
-}[];
+};
 
 interface Data {
     loading: boolean,
