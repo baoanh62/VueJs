@@ -1,17 +1,15 @@
 <script setup lang="ts">
-import ToDoItem from './ToDoItem.vue'
+import CompanyItem from './CompanyNew.vue'
 import imgBG from "../assets/imagebg.png"
 </script>
 
 <template>
     <div class="todoList">
-        <ToDoItem v-for="item in toDoList" :key="item.title" 
-            :imageurl="item.imagePath ? item.imagePath : imgBG"
-            @stat-task="onStartTask"
-            @remove-task="onRemoveTask">
+        <CompanyItem v-for="item in toDoList" :key="item.title" 
+            :imageurl="item.imagePath ? item.imagePath : imgBG">
             <template #title>{{ item.title }}</template>
             <template #description>{{ item.description }}</template>
-        </ToDoItem>
+        </CompanyItem>
     </div>
 </template>
 
@@ -19,7 +17,7 @@ import imgBG from "../assets/imagebg.png"
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-interface ToDoItem {
+interface CompanyItem {
     title: string,
     description: string,
     imagePath: null | string,
@@ -29,7 +27,7 @@ interface ToDoItem {
 
 interface Data {
     loading: boolean,
-    toDoList: ToDoItem[]
+    toDoList: CompanyItem[]
 }
 
 export default defineComponent({
@@ -45,19 +43,13 @@ export default defineComponent({
     watch: {
     },
     methods: {
-        onStartTask(): void{
-            console.log("Comming Soon");
-        },
-        onRemoveTask(): void{
-            console.log("Comming Soon");
-        },
         fetchData(): void {
             this.toDoList = [];
             this.loading = true;
             fetch('https://localhost:7281/Todo')
                 .then(r => r.json())
                 .then(json => {
-                    this.toDoList = json as ToDoItem[];
+                    this.toDoList = json as CompanyItem[];
                     this.loading = false;
                     console.log(this.toDoList);
                     return;
@@ -72,7 +64,9 @@ export default defineComponent({
 .todoList {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    width: 100%;
+    align-items: center;
 }
 </style>

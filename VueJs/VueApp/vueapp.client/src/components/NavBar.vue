@@ -13,7 +13,7 @@ import NavBarItem from './NavBarItem.vue';
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <NavBarItem v-for="item in navList" :key="item.link" :url="item.link" :active="item.active">
+                    <NavBarItem v-for="item in navList" :key="item.link" :url="item.active ? 'javascript:void' : item.link" :active="item.active">
                         <template #heading>
                             {{ item.text }}
                         </template>
@@ -81,10 +81,21 @@ export default defineComponent({
 <style scoped>
 nav {
     width: 100%;
-    height: 42px;
-    background-color: #D0D0D0 !important;
+    height: 60px;
+    background-color: #f0f0f0 !important;
+}
+#navbarSupportedContent{
+    height: inherit;
 }
 
+.d-flex,
+.container-fluid,
+.navbar-nav,
+.nav-item{
+    display: inherit;
+    height: inherit;
+    align-items: center;
+}
 
 @media (max-width: 990px) {
     nav {

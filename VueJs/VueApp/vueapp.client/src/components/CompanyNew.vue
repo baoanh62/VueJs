@@ -13,15 +13,9 @@ import SupportIcon from './icons/IconSupport.vue'
       <h5 class="card-title">
         <slot name="title"></slot>
       </h5>
-      <span>Task description</span>
-      <br/>
       <p class="card-text">
         <slot name="description"></slot>
       </p>
-      <div class="action">
-        <button type="button" v-on:click="startTaskClick" class="btn btn-primary">Start</button>
-        <button type="button" v-on:click="removeTaskClick" class="btn btn-dark">Remove</button>
-      </div>
     </div>
   </div>
 </template>
@@ -32,36 +26,36 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   props: ['imageurl',],
-  emits: ["statTask", "removeTask"],
   data() {
     return {
       propimageurl: this.imageurl
     }
   },
   methods: {
-    startTaskClick() {
-      this.$emit("statTask");
-    },
-    removeTaskClick() {
-      this.$emit("removeTask");
-    },
   }
 });
 </script>
 
 <style scoped>
 .card {
-  width: 24rem;
   height: auto;
   margin-right: calc(2% + 5px);
   margin-bottom: calc(2% + 5px);
   text-align: left;
   background: black;
   color: white;
+  display: flex;
+  flex-direction: row;
+  max-width: 1000px;
+}
+
+.card:nth-child(even) {
+    flex-direction: row-reverse;
 }
 
 .card .card-img-top{
   padding: 4px;
+  width: 480px;
 }
 
 .card .action {

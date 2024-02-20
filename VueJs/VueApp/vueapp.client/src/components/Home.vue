@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CompanyList from './CompanyList.vue';
 import ToDoList from './ToDoList.vue';
 </script>
 
@@ -6,6 +7,9 @@ import ToDoList from './ToDoList.vue';
     <div class="content-component">
         <h1>Todo</h1>
         <ToDoList/>
+        <br/>
+        <h1>Comapny News</h1>
+        <CompanyList/>
     </div>
 </template>
 
@@ -76,6 +80,10 @@ th, td {
 
 .content-component {
     text-align: center;
+    padding: 2rem;
+}
+.content-component h1{
+    text-align: left;
 }
 
 table {
