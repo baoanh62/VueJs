@@ -46,10 +46,10 @@ export default defineComponent({
     },
     methods: {
         onStartTask(): void{
-            console.log("Comming Soon");
+            alert("Comming Soon");
         },
         onRemoveTask(): void{
-            console.log("Comming Soon");
+            alert("Comming Soon");
         },
         fetchData(): void {
             this.toDoList = [];
@@ -59,7 +59,6 @@ export default defineComponent({
                 .then(json => {
                     this.toDoList = json as ToDoItem[];
                     this.loading = false;
-                    console.log(this.toDoList);
                     return;
                 });
         }
